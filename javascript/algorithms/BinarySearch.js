@@ -22,5 +22,5 @@ const binarySearch = (nums, target) => {
 
 };
 
-console.log(binarySearch([-1,0,3,5,9,12], 9));
+console.log(binarySearch([-1,0,3,5,9,12], 9)); // Returns index -> 4
 
