@@ -24,3 +24,35 @@ const insert = (intervals, newInterval) => {
 
     return [...left, newInterval, ...right];
 };
+
+// Time: O(n), Space: O(n)
+
+let insert2 = (intervals, newInterval) => {
+
+    let [newIntervalStart, newIntervalEnd] = newInterval;
+
+    let i = 0;
+    let result = [];
+
+    while(i < intervals.length && newIntervalStart > intervals[i][1]) {
+        result.push(intervals[i]);
+        i++;
+    }
+
+    while (i < intervals.length && intervals[i][0] <= newIntervalEnd ) {
+        newIntervalStart = Math.min(intervals[i][0], newIntervalStart);
+        newIntervalEnd = Math.max(intervals[i][1], newIntervalEnd);
+        i++;
+    }
+
+    result.push([newIntervalStart, newIntervalEnd])
+
+
+    while (i < intervals.length && newIntervalEnd < intervals[i][0]) {
+        result.push(intervals[i]);
+        i++;
+    }
+
+    return result;
+
+};
