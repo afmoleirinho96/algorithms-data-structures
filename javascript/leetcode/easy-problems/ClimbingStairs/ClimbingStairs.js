@@ -16,6 +16,22 @@ var climbStairs = function(n, memo = {}) {
     return res;
 };
 
+// Time: O(n), Space: O(n)
+const climbStairsMemoImproved = (n, memoizedSteps = {}) => {
+
+    if (n <= 3) {
+        return n;
+    }
+
+    if(memoizedSteps[n] !== null) return memoizedSteps[n];
+
+    memoizedSteps[n] = climbStairs(n-1, memoizedSteps) + climbStairs(n-2, memoizedSteps)
+
+    return memoizedSteps[n];
+
+}
+
+
 /* Without memoization */
 const climbStairs2 = (n) => {
 
