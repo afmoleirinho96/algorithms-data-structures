@@ -59,11 +59,11 @@ const containsDuplicate5 = (nums) => {
 };
 
 function runTest(testFunction, testArray) {
-    console.log('   Running test:', testFunction.name);
+    console.log(' Running test:', testFunction.name);
     let start = performance.now();
     let result = testFunction(testArray);
     let end = performance.now();
-    console.log('      Duration:', end - start);
+    console.log('Duration:', end - start);
 }
 
 let arr = [];

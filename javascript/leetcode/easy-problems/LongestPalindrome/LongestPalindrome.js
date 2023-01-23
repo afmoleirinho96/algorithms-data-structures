@@ -3,18 +3,13 @@
 // Time: O(n), Space: O(n)
 const longestPalindrome = (s) => {
 
-    let charCounter = {};
+    let charCounter = new Map();
     let longestPalindromeLength = 0;
 
-    if (s.split('').every(char => char === s[0])) return s.length;
-
     for (let char of s) {
-        if (!charCounter[char]) {
-            charCounter[char] = 0;
-        }
-        charCounter[char]++;
+       charCounter.set(char, charCounter.get(char) + 1 || 1);
 
-        if (charCounter[char] % 2 === 0) {
+        if (charCounter.get(char) % 2 === 0) {
             longestPalindromeLength += 2;
         }
     }
