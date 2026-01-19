@@ -19,5 +19,18 @@ const canAttendMeetings = (intervals) => {
     }
 
     return true;
+
+
+    /*
+    intervalsSorted.forEach(interval => {
+        const startTime = interval[0];
+
+        if (startTime < previousEndTime) {
+            return false;
+        }
+
+    previousEndTime = interval[1];
+  });
+    * */
 };
 
